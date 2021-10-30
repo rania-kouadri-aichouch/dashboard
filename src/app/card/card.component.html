@@ -1,0 +1,46 @@
+<div class="container">
+
+<button  (click)="getUsers()" class="btnn">get users</button>
+
+<button  (click)="sort('name.first')" class="btnn">Order BY FirstName</button>
+
+<button  (click)="sort('name.last')" class="btnn">orderBy LastName</button>
+
+
+<div class="row">
+<div class="main">
+<div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" [(ngModel)] = "searchText" class="form-control" placeholder="Search">
+  </div>
+  </div>
+  </div>
+
+
+
+  <div class="row">
+<div class="card" *ngFor="let user of data|filter:searchText|orderBy:orderHeader:false | paginate: {id: 'listing_pagination',
+itemsPerPage: 6,
+currentPage: page,
+totalItems: totalRecords
+}">
+  <div class="img-div">
+  <img src="{{user.picture.medium}}" alt="img" class="imgC" style="width:50%">
+  </div>
+  <div class="fulln"><h5>{{user.name.first}}</h5> &nbsp; <h5> {{user.name.last}}</h5></div>
+
+  <p class="email">{{user.email}}</p>
+  <p>Find Me On :</p>
+  <div id="media">
+  <a href="#"><i class="fa fa-dribbble" id="dri"></i></a>
+  <a href="#"><i class="fa fa-twitter" id="tw"></i></a>
+  <a href="#"><i class="fa fa-linkedin" id="in"></i></a>
+  <a href="#"><i class="fa fa-facebook" id="fb"></i></a>
+  </div>
+  <p><button class="btn btn-outline-primary">See More Details</button></p>
+</div>
+</div>
+</div>
+<div>
+  <pagination-controls  id="listing_pagination"  (pageChange)="page = $event"></pagination-controls>
+</div>

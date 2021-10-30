@@ -1,0 +1,40 @@
+
+<button  (click)="getUsers()" class="btnn">get users</button>
+  <button (click)="exportexcel()" class="btnn">Export to Excel</button>
+
+<div class="main">
+<div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" [(ngModel)] = "searchText" class="form-control" placeholder="Search">
+  </div>
+  </div>
+
+<table class="table table-striped" id="excel-table">
+<thead>
+<tr>
+
+<th >Picture</th>
+<th (click)="sort('name.first')">FirstName &nbsp; <i class="fa fa-sort"></i></th>
+<th (click)="sort('name.last')"> <i class="fa fa-sort"></i> LastName</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody >
+<tr *ngFor="let user of data |filter:searchText|orderBy:orderHeader:false  | paginate: {id: 'listing_pagination',
+itemsPerPage: 6,
+currentPage: page,
+totalItems: totalRecords
+}">
+<td>
+  <img class="imgU" src="{{user.picture.medium}}" alt="user image">
+  </td>
+<td>{{user.name.first}}</td>
+<td>{{user.name.last}}</td>
+<td>{{user.gender}}</td>
+
+</tr>
+</tbody>
+</table>
+<div>
+  <pagination-controls  id="listing_pagination"  (pageChange)="page = $event"></pagination-controls>
+</div>

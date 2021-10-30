@@ -1,0 +1,126 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  max-width: 280px;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 1px;
+  text-align: center;
+  border-radius: 6%;
+  
+}
+.card:hover{
+box-shadow: 0 0px 30px 0 rgba(0, 179, 60 ,0.2);
+    transform: scale(1.2, 1.2);
+
+}
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+/*button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+
+  font-size: 18px;
+}*/
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+.btnn{
+  background-color: #00bfd8;
+  border-color: #00bfd8;
+  border-radius: 7%;
+  padding: 10px;
+
+}
+button{
+  margin:0px 20px;
+
+}
+button:hover, a:hover {
+  opacity: 0.7;
+}
+/* ---- card img --- */
+.imgC{
+  width:58%;
+    border-radius:50%;
+
+  margin: 25px;
+  margin-bottom: 10px;
+   border: 5px solid #72b3f4;
+
+}
+.img-div{
+  width: 90%;
+  margin:10px;
+    border-radius:50%;
+
+}
+#media{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+
+     }
+#dri{
+  color: #72b3f4;
+  margin: 10px;
+}
+#tw{
+  color: #72b3f4;
+  margin: 10px;
+}
+
+#in{
+  color: #72b3f4;
+  margin: 10px;
+}
+
+#fb{
+  color: #72b3f4;
+  margin: 10px;
+}
+.email{
+  color: blue;
+  font-size: 15px;
+}
+
+.main {
+    width: 70%;
+    padding: 30px;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+/*---------- full name ---*/
+.fulln{
+  display:flex;
+  flex-direction: row;
+    justify-content:center;
+}
